@@ -31,7 +31,7 @@ namespace TemplateBot
           
                 await Log(arg.Name + " Connected!", ConsoleColor.Green);
         }
-        public async Task Log(string message, ConsoleColor color)
+        public static async Task Log(string message, ConsoleColor color)
         {
             Console.ForegroundColor = color;
             Console.WriteLine(DateTime.Now +" : " + message, color);
