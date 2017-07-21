@@ -28,14 +28,20 @@ namespace TemplateBot
 
             var context = new SocketCommandContext(_client, msg);
             int argPost = 0;
-            if (msg.HasCharPrefix('.',ref argPost))
+            if (msg.HasCharPrefix('.', ref argPost))
             {
                 var result = _service.ExecuteAsync(context, argPost);
                 if (!result.Result.IsSuccess && result.Result.Error != CommandError.UnknownCommand)
                 {
                     await context.Channel.SendMessageAsync(result.Result.ErrorReason);
                 }
+                Program.Log("Invoked " + msg + " in " + context.Channel + " with " + result.Result, ConsoleColor.Magenta);
             }
+            else
+            {
+                Program.Log(context.Channel + "-" + context.User.Username + " : " + msg, ConsoleColor.White);
+            }
+
         }
     }
 }
