@@ -17,7 +17,7 @@ namespace TemplateBot
             _client = new DiscordSocketClient();
             new CommandHandler(_client);
             await Log("Logging in...", ConsoleColor.Green);
-            await _client.LoginAsync(TokenType.Bot, "MjQxMTg5NTg5MzE2Nzk2NDE2.DE-Ozw.cZbo9P-quFCQHg9jysK6eDbZzng");
+            await _client.LoginAsync(TokenType.Bot, "YOUR TOKEN HERE");
             await Log("Connecting...", ConsoleColor.Green);
             await _client.StartAsync();
             _client.GuildAvailable += _client_GuildAvailable;
