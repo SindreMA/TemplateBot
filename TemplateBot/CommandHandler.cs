@@ -35,11 +35,11 @@ namespace TemplateBot
                 {
                     await context.Channel.SendMessageAsync(result.Result.ErrorReason);
                 }
-                Program.Log("Invoked " + msg + " in " + context.Channel + " with " + result.Result, ConsoleColor.Magenta);
+                await Program.Log("Invoked " + msg + " in " + context.Channel + " with " + result.Result, ConsoleColor.Magenta);
             }
             else
             {
-                Program.Log(context.Channel + "-" + context.User.Username + " : " + msg, ConsoleColor.White);
+                await Program.Log(context.Channel + "-" + context.User.Username + " : " + msg, ConsoleColor.White);
             }
 
         }
